@@ -1,0 +1,130 @@
+* ohm-grammar-quiz-markdown
+
+#+begin_src markdown
+If an accused person is aged 18 to 21, their case will be heard in a Youth Court?
+
+- [ ] True
+- [x] False
+
+Which TWO of the following are fundamental principles of British life?
+
+- [ ] Only driving your car on weekdays and participation in community life
+- [x] Participation in community life and tolerance of those with different faiths and beliefs
+- [ ] Only driving your car on weekdays and growing your own fruit and vegetables
+- [ ] Growing your own fruit and vegetables and tolerance with different faits and beliefs
+
+What is the name of the Houses of Parliament's clock tower?
+
+- [ ] Big Ben Tower
+- [ ] Parliament Tower
+- [ ] House of Commons Tower
+- [x] Elizabeth Tower
+
+Which of the following was a famous British inventor?
+
+- [ ] Dyland Thomas
+- [ ] Clement Atlee
+- [ ] Emmeline Pankhurst
+- [x] Sir Peter Mansfield
+#+end_src
+
+#+begin_src json
+{
+  "@context": "https://schema.org/",
+  "@type": "Quiz",
+  "hasPart": [
+    {
+      "@type": "Question",
+      "text": "If an accused person is aged 18 to 21, their case will be heard in a Youth Court?",
+      "acceptedAnswer": {
+        "position": 1,
+        "@type": "Answer",
+        "text": "False"
+      },
+      "suggestedAnswer": {
+        "position": 0,
+        "@type": "Answer",
+        "text": "True"
+      }
+    },
+    {
+      "@type": "Question",
+      "text": "Which TWO of the following are fundamental principles of British life?",
+      "acceptedAnswer": {
+        "position": 1,
+        "@type": "Answer",
+        "text": "Participation in community life and tolerance of those with different faiths and beliefs"
+      },
+      "suggestedAnswer": [
+        {
+          "position": 0,
+          "@type": "Answer",
+          "text": "Only driving your car on weekdays and participation in community life"
+        },
+        {
+          "position": 2,
+          "@type": "Answer",
+          "text": "Only driving your car on weekdays and growing your own fruit and vegetables"
+        },
+        {
+          "position": 3,
+          "@type": "Answer",
+          "text": "Growing your own fruit and vegetables and tolerance with different faits and beliefs"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "text": "What is the name of the Houses of Parliament's clock tower?",
+      "acceptedAnswer": {
+        "position": 3,
+        "@type": "Answer",
+        "text": "Elizabeth Tower"
+      },
+      "suggestedAnswer": [
+        {
+          "position": 0,
+          "@type": "Answer",
+          "text": "Big Ben Tower"
+        },
+        {
+          "position": 1,
+          "@type": "Answer",
+          "text": "Parliament Tower"
+        },
+        {
+          "position": 2,
+          "@type": "Answer",
+          "text": "House of Commons Tower"
+        }
+      ]
+    },
+    {
+      "@type": "Question",
+      "text": "Which of the following was a famous British inventor?",
+      "acceptedAnswer": {
+        "position": 3,
+        "@type": "Answer",
+        "text": "Sir Peter Mansfield"
+      },
+      "suggestedAnswer": [
+        {
+          "position": 0,
+          "@type": "Answer",
+          "text": "Dyland Thomas"
+        },
+        {
+          "position": 1,
+          "@type": "Answer",
+          "text": "Clement Atlee"
+        },
+        {
+          "position": 2,
+          "@type": "Answer",
+          "text": "Emmeline Pankhurst"
+        }
+      ]
+    }
+  ]
+}
+#+end_src
