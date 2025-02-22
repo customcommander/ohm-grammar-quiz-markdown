@@ -1,6 +1,6 @@
 * ohm-grammar-quiz-markdown
 
-A grammar for converting a markdown-like document into a JSON-LD document:
+A grammar for extracting Quiz structured data in JSON-LD out of markdown documents.
 
 #+begin_src markdown
 What is the correct answer?

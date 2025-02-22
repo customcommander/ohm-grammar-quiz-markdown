@@ -1,6 +1,7 @@
 {
   "name": "ohm-grammar-quiz-markdown",
   "version": "1.0.0",
+  "description": "A grammar for extracting Quiz structured data in JSON-LD out of markdown documents",
   "type": "module",
   "main": "index.js",
   "scripts": {
