@@ -1,6 +1,6 @@
 import * as ohm from 'ohm-js';
 
-const grammar = ohm.grammar(String.raw`
+export const grammar = ohm.grammar(String.raw`
 
   QuizMarkdown {
 
@@ -28,7 +28,7 @@ function map_schema(list) {
   return list.children.map(child => child.schema());
 }
 
-const semantics = grammar.createSemantics().addOperation('schema', {
+export const semantics = grammar.createSemantics().addOperation('schema', {
 
   Quiz(blocks) {
     return {
@@ -86,8 +86,4 @@ const semantics = grammar.createSemantics().addOperation('schema', {
 
 });
 
-export default {
-  grammar,
-  semantics,
-};
 
