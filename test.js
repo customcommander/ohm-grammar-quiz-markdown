@@ -4,20 +4,21 @@ import Ajv from 'ajv';
 
 import {grammar,semantics} from './index.js';
 
+async function get_validator() {
+  let main = await readFile('./schema.main.json'       , {encoding: 'utf8'});
+  let defs = await readFile('./schema.definitions.json', {encoding: 'utf8'});
+  main = JSON.parse(main);
+  defs = JSON.parse(defs);
+  return (new Ajv).addSchema(defs).compile(main);
+}
+
 function parse(md_string) {
   const match = grammar.match(md_string);
   return semantics(match).schema();
 }
 
 test('parse markdown', async () => {
-  const main = await readFile('./schema.main.json'       , {encoding: 'utf8'});
-  const defs = await readFile('./schema.definitions.json', {encoding: 'utf8'});
-  
-  const validate = (
-    (new Ajv)
-      .addSchema(JSON.parse(defs))
-      .compile(JSON.parse(main))
-  );
+  const validate = await get_validator();
 
   const quiz = parse(`
 
