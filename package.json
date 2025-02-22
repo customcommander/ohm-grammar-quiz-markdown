@@ -1,15 +1,33 @@
 {
   "name": "ohm-grammar-quiz-markdown",
   "version": "1.0.0",
+  "author": {
+    "url": "https://github.com/customcommander"
+  },
+  "license": "unlicense",
   "description": "A grammar for extracting Quiz structured data in JSON-LD out of markdown documents",
+  "keywords": [
+    "parser",
+    "ohm-grammar",
+    "json-ld",
+    "quiz"
+  ],
+  "homepage": "https://github.com/customcommander/ohm-grammar-quiz-markdown",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/customcommander/ohm-grammar-quiz-markdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/customcommander/ohm-grammar-quiz-markdown/issues"
+  },
   "type": "module",
+  "files": [
+    "index.js"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "node --test-reporter=tap test.js"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "ohm-js": "^17.1.0"
   },
