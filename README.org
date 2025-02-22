@@ -48,9 +48,7 @@ becomes:
 
    /Why?/
 
-   No good reasons other than I am not very good at
-   writing grammars. If you think you can help with that,
-   please let me know.
+   No good reasons other than I am not very good at writing grammars.
 
 2. Only paragraphs and lists
 
@@ -58,7 +56,5 @@ becomes:
 
    This is actually by design.
 
-   I want to restrict the syntax to the bare minimum
-   as an attempt to keep documents simple to write
-   and read.
-
+   By restricting the syntax to the bare minimum,
+   I hope to make documents simpler to write and read.
