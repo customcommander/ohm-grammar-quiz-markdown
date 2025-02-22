@@ -41,3 +41,24 @@ becomes:
   ]
 }
 #+end_src
+
+** Limitations
+
+1. Questions and answers *must* fit on a single line
+
+   /Why?/
+
+   No good reasons other than I am not very good at
+   writing grammars. If you think you can help with that,
+   please let me know.
+
+2. Only paragraphs and lists
+
+   /Why?/
+
+   This is actually by design.
+
+   I want to restrict the syntax to the bare minimum
+   as an attempt to keep documents simple to write
+   and read.
+
