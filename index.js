@@ -56,7 +56,7 @@ export const semantics = grammar.createSemantics().addOperation('schema', {
     const [correct, wrong] =
       map_schema(answers).reduce(
         ([c, w], [status, answer], position) => {
-          (status ? c : w).push({position, ...answer});
+          (status ? c : w).push({...answer, position});
           return [c, w];
         },
         [[], []]
