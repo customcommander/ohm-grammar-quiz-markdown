@@ -24,19 +24,22 @@ const grammar = ohm.grammar(String.raw`
 
 `);
 
+function map_schema(list) {
+  return list.children.map(child => child.schema());
+}
+
 const semantics = grammar.createSemantics().addOperation('schema', {
 
   Quiz(blocks) {
     return {
       "@context": "https://schema.org/",
       "@type": "Quiz",
-      "hasPart": blocks.children.map(block => block.schema())
+      "hasPart": map_schema(blocks)
     };
   },
 
   Block(question, answers) {
     return {
-      "@type": "Question",
       ...question.schema(),
       ...answers.schema()
     }
@@ -44,23 +47,24 @@ const semantics = grammar.createSemantics().addOperation('schema', {
 
   Question(text) {
     return {
+      "@type": "Question",
       text: text.schema()
     }
   },
 
   Answers(answers) {
-    const processed = answers.children.map(answer => answer.schema());
-
-    const [correct, wrong] = processed.reduce(
-      ([c, w], [status, answer], position) => {
-        (status ? c : w).push({position, ...answer});
-        return [c, w];
-      }, [[], []]
-    );
+    const [correct, wrong] =
+      map_schema(answers).reduce(
+        ([c, w], [status, answer], position) => {
+          (status ? c : w).push({position, ...answer});
+          return [c, w];
+        },
+        [[], []]
+      );
 
     // Assuming that a question **MUST** have at least one correct answer.
     if (correct.length === 0) {
-      throw new Error('question with no correct answers');    
+      throw new Error("question with no correct answers");
     }
 
     return {
@@ -73,10 +77,7 @@ const semantics = grammar.createSemantics().addOperation('schema', {
     // When `- [ ] Answer A` then `mark` is `[]` (empty)
     // When `- [x] Answer B` then `mark` is `[x]`
     const correct = mark.children.length === 1;
-    return [correct, {
-      '@type': 'Answer',
-      text: text.schema(),
-    }];
+    return [correct, {"@type": "Answer", text: text.schema()}];
   },
 
   text(val, _) {
