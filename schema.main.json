@@ -1,0 +1,23 @@
+{
+  "$id": "schemas/main.json",
+  "type": "object",
+  "properties": {
+    "@context": {
+      "const": "https://schema.org/"
+    },
+    "@type": {
+      "const": "Quiz"
+    },
+    "hasPart": {
+      "type": "array",
+      "items": {
+        "$ref": "defs.json#/definitions/question"
+      }
+    }
+  },
+  "required": [
+    "@context",
+    "@type",
+    "hasPart"
+  ]
+}

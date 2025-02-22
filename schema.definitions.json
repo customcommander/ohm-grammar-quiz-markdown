@@ -1,0 +1,43 @@
+{
+  "$id": "schemas/defs.json",
+  "definitions": {
+    "question": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "const": "Question"
+        },
+        "text": {
+          "type": "string"
+        },
+        "acceptedAnswer": {
+          "$ref": "defs.json#/definitions/answer"
+        }
+      },
+      "required": [
+        "@type",
+        "acceptedAnswer",
+        "text"
+      ]
+    },
+    "answer": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "const": "Answer"
+        },
+        "position": {
+          "type": "number"
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "@type",
+        "position",
+        "text"
+      ]
+    }
+  }
+}
