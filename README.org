@@ -42,6 +42,25 @@ becomes:
 }
 #+end_src
 
+** How To Use
+
+Import the =parse= function from the package
+and pass it a string that represents the markdown
+document to parse:
+
+#+begin_src javascript
+import {parse} from '@customcommander/ohm-grammar-quiz-markdown';
+
+parse(`
+What is the correct answer?
+
+- [ ] 41
+- [x] 42
+- [ ] 43
+`);
+
+#+end_src
+
 ** Limitations
 
 1. Questions and answers *must* fit on a single line
