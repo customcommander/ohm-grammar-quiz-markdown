@@ -86,4 +86,14 @@ export const semantics = grammar.createSemantics().addOperation('schema', {
 
 });
 
+/**
+
+   Takes a markdown document as parameter (`md_string`)
+   and returns a Quiz JSON-LD structured data document.
+
+ */
+export const parse = (md_string) => {
+  const match = grammar.match(md_string);
+  return semantics(match).schema();
+};
 

@@ -2,7 +2,7 @@ import {readFile} from 'node:fs/promises';
 import test from 'node:test';
 import Ajv from 'ajv';
 
-import {grammar, semantics} from './index.js';
+import {parse} from './index.js';
 
 async function get_validator() {
   let main = await readFile('./schema.main.json'       , {encoding: 'utf8'});
@@ -10,11 +10,6 @@ async function get_validator() {
   main = JSON.parse(main);
   defs = JSON.parse(defs);
   return (new Ajv).addSchema(defs).compile(main);
-}
-
-function parse(md_string) {
-  const match = grammar.match(md_string);
-  return semantics(match).schema();
 }
 
 test('parse markdown', async (t) => {
