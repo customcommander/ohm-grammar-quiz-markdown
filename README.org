@@ -42,6 +42,12 @@ becomes:
 }
 #+end_src
 
+** Install
+
+#+begin_src shell
+npm i @customcommander/ohm-grammar-quiz-markdown
+#+end_src
+
 ** How To Use
 
 Import the =parse= function from the package
