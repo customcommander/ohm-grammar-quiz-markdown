@@ -2,6 +2,10 @@
 
 Write up your practice problem (Quiz) in Markdown and turn it into JSON-LD structured data.
 
+** Example
+
+Input:
+
 #+begin_src markdown
 What is the correct answer?
 
@@ -10,7 +14,7 @@ What is the correct answer?
 - [ ] 43
 #+end_src
 
-becomes:
+Output:
 
 #+begin_src json
 {
@@ -83,3 +87,6 @@ What is the correct answer?
 
    By restricting the syntax to the bare minimum,
    I hope to make documents simpler to write and read.
+
+
+
